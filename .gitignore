@@ -1,3 +1,4 @@
 output/
-venv_bsoup/
+venv_parsing/
 .idea/
+.gitignore

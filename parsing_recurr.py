@@ -73,7 +73,8 @@ def get_product_preview_info(url, counter=0):
 # soup = BeautifulSoup(src, 'lxml')
 
 # Get src from URL
-url = 'https://www.chipdip.ru/catalog/sensor-detector-interfaces?ps=x3'
+#url = 'https://www.chipdip.ru/catalog/sensor-detector-interfaces?ps=x3'
+url = 'https://www.chipdip.ru/catalog/ic-microcontrollers?p.0=ST+Microelectronics&ps=x3'
 get_product_preview_info(url)
 
 
