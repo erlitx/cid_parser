@@ -1,4 +1,4 @@
 output/
 venv_parsing/
 .idea/
-.gitignore
+*.csv
