@@ -52,17 +52,18 @@ def scrape_product_page(url):
     soup = BeautifulSoup(html, 'lxml')
     title = soup.find('h1', itemprop='name').text
 
+    tech_params = {}
+
     # Get a technical params table class
     params_table = soup.find(class_='product__params')
-    rows = params_table.find_all('tr')
-
-    # Iterate over the table with parameters and get all the keys and values
-    tech_params = {}
-    for item in rows:
-        param_name = item.find(class_='product__param-name')
-        param_value = item.find(class_='product__param-value')
-        if param_name is not None and param_value is not None:
-            tech_params[param_name.text] = param_value.text
+    if params_table:
+        rows = params_table.find_all('tr')
+        # Iterate over the table with parameters and get all the keys and values
+        for item in rows:
+            param_name = item.find(class_='product__param-name')
+            param_value = item.find(class_='product__param-value')
+            if param_name is not None and param_value is not None:
+                tech_params[param_name.text] = param_value.text
 
     return Product(title, tech_params)
 
